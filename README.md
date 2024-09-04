@@ -24,3 +24,6 @@ Make port 5000 available to the outside world
 Run app.py when the container launches
 `CMD ["python", "app.py"]`
 ```
+```
+`docker build -t flask-app .
+`
