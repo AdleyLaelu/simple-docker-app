@@ -47,7 +47,6 @@ To install docker : sudo apt install docker.io
                     sudo usermod -aG docker $USER
                     docker run hello-world
 
-```
 Run the container using the following command:
 docker run -p 5000:5000 flask-app
 ```
