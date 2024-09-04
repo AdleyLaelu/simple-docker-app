@@ -3,8 +3,9 @@ Will Create and deploy a two-part web application: a backend written in Python (
 
 # STEP 1 Creating the Dockerfile in the directory where you files are found
 
-1)
-  ``` `touch Dockerfile`
+```
+touch Dockerfile
+```
 
 Use an official Python runtime as a parent image, This specifies the base image for the container, which is a lightweight Python 3.8 environment.
 ```
