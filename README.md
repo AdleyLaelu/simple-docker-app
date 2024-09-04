@@ -60,3 +60,18 @@ To install docker : sudo apt install docker.io
 Run the container using the following command:
 docker run -p 5000:5000 flask-app
 ```
+
+# 1) Set Up Docker Compose to Link Flask and MySQL
+```
+Service Orchestration: Docker Compose handles the orchestration of multiple containers.
+It makes sure that the MySQL service is up before the Flask app tries to connect, which is handled by the depends_on directive in Docker Compose.
+
+Networking Made Easy: Compose automatically sets up networking between the containers, so you don’t have to configure the networking manually.
+The Flask app can connect to the MySQL service using the service name (db), which Docker Compose resolves for you.
+
+Simplicity: Instead of manually running docker run commands for both MySQL and Flask,
+Docker Compose allows you to start everything with one command (docker-compose up), which is more efficient for development and production.
+
+Environment Variables: With Compose, it's easy to define environment variables (e.g., for the MySQL password, database name)
+in the docker-compose.yml file, and they’ll automatically be passed to the containers
+```
