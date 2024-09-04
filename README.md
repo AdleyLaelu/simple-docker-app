@@ -6,7 +6,7 @@ Will Create and deploy a two-part web application: a backend written in Python (
 1) `touch Dockerfile`
 
 Use an official Python runtime as a parent image, This specifies the base image for the container, which is a lightweight Python 3.8 environment.
-`FROM python:3.8-slim`
+```FROM python:3.8-slim```
 
 Set/Create the working directory in the container
 `WORKDIR /app`
