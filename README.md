@@ -24,6 +24,9 @@ Make port 5000 available to the outside world
 Run app.py when the container launches
 `CMD ["python", "app.py"]`
 ```
+docker build: This command tells Docker to build an image.
+-t flask-app: This tags your image with the name flask-app. You can change this name to whatever you prefer.
+.: The dot specifies that Docker should look for the Dockerfile in the current directory.
 ```
 `docker build -t flask-app .
 `
