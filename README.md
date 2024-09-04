@@ -61,7 +61,7 @@ Run the container using the following command:
 docker run -p 5000:5000 flask-app
 ```
 
-# 1) Set Up Docker Compose to Link Flask and MySQL
+# 2) Set Up Docker Compose to Link Flask and MySQL
 ```
 Service Orchestration: Docker Compose handles the orchestration of multiple containers.
 It makes sure that the MySQL service is up before the Flask app tries to connect, which is handled by the depends_on directive in Docker Compose.
@@ -74,4 +74,45 @@ Docker Compose allows you to start everything with one command (docker-compose u
 
 Environment Variables: With Compose, it's easy to define environment variables (e.g., for the MySQL password, database name)
 in the docker-compose.yml file, and they’ll automatically be passed to the containers
+```
+`nano docker-compose.yml`
+```
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=rootpassword
+      - MYSQL_DB=test_db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: test_db
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+```
+```
+version: '3': Specifies the version of Docker Compose you're using.
+services: Defines the services that will run (in this case, web and db).
+web: This is your Flask application.
+build: .: This tells Docker to build the Flask app using the Dockerfile in the current directory.
+ports: Maps port 5000 inside the container to port 5000 on your machine.
+depends_on: Ensures that the db service (MySQL) starts before the web service.
+environment: Passes environment variables to the Flask app so it can connect to the MySQL database.
+db: This is the MySQL database service.
+image: Uses the official MySQL 5.7 image from Docker Hub.
+environment: Sets environment variables for MySQL (root password and database name).
+volumes: Ensures data persistence by storing the database files in a volume called db_data.
+volumes: Defines a named volume (db_data) to persist the MySQL database files.
 ```
