@@ -13,26 +13,32 @@ Use an official Python runtime as a parent image, This specifies the base image 
 $ FROM python:3.8-slim
 ```
 
-Set/Create the working directory in the container
+
 ```
+Set/Create the working directory in the container
 $ WORKDIR /app
 ```
 
-Copy the current directory contents into the container, This copies everything in your local directory (including app.py and requirements.txt) into the /app directory in the container
+
 ```
+Copy the current directory contents into the container, This copies everything in your local directory (including app.py and requirements.txt) into the /app directory in the container
 COPY . /app`
 ```
-Install any needed packages specified in requirements.txt, This installs the dependencies listed in requirements.txt inside the container
-``` 
+
+```
+Install any needed packages specified in requirements.txt, This installs the dependencies listed in requirements.txt inside the container 
 $ RUN pip install --no-cache-dir -r requirements.txt`
 ```
-Make port 5000 available to the outside world
+
 ```
+Make port 5000 available to the outside world
 $ EXPOSE 5000
 ```
-Run app.py when the container launches
+
 ```
+Run app.py when the container launches
 $ CMD ["python", "app.py"]
+```
 ```
 docker build: This command tells Docker to build an image.
 -t flask-app: This tags your image with the name flask-app. You can change this name to whatever you prefer.
