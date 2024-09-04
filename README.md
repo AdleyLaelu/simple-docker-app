@@ -37,8 +37,8 @@ docker build: This command tells Docker to build an image.
 -t flask-app: This tags your image with the name flask-app. You can change this name to whatever you prefer.
 .: The dot specifies that Docker should look for the Dockerfile in the current directory.
 ```
-`docker build -t flask-app .
-`
+docker build -t flask-app .
+
 ```
 To install docker : sudo apt install docker.io
                     sudo systemctl start docker
@@ -46,6 +46,7 @@ To install docker : sudo apt install docker.io
                     sudo systemctl status docker
                     sudo usermod -aG docker $USER
                     docker run hello-world
+                    ```
                     
 ```
 Run the container using the following command:
