@@ -3,7 +3,8 @@ Will Create and deploy a two-part web application: a backend written in Python (
 
 # STEP 1 Creating the Dockerfile in the directory where you files are found
 
-1) `touch Dockerfile`
+1)
+  ``` `touch Dockerfile`
 
 Use an official Python runtime as a parent image, This specifies the base image for the container, which is a lightweight Python 3.8 environment.
 ```FROM python:3.8-slim```
@@ -22,4 +23,4 @@ Make port 5000 available to the outside world
 
 Run app.py when the container launches
 `CMD ["python", "app.py"]`
-
+```
