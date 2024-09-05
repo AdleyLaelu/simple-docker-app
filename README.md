@@ -58,9 +58,8 @@ To install docker : sudo apt install docker.io
 Run the container using the following command:
 docker run -p 5000:5000 flask-app
 Connection fails because MsQL was not linked to Flask
-![Capture d’écran 2024-09-04 195518](https://github.com/user-attachments/assets/4b910e7f-fbef-47f7-9c24-f80d95680d41)
-
 ```
+![Capture d’écran 2024-09-04 195518](https://github.com/user-attachments/assets/795f4d60-93b4-4983-ae40-75c1a9db76f5)
 
 # 2) Set Up Docker Compose to Link Flask and MySQL
 ```
