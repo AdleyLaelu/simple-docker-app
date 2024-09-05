@@ -59,7 +59,8 @@ Run the container using the following command:
 docker run -p 5000:5000 flask-app
 Connection fails because MsQL was not linked to Flask
 ```
-![Capture d’écran 2024-09-04 195518](https://github.com/user-attachments/assets/795f4d60-93b4-4983-ae40-75c1a9db76f5)
+![Capture d’écran 2024-09-04 195518](https://github.com/user-attachments/assets/355f7528-1259-4722-b4bd-e92ec502a7d6)
+
 
 # 2) Set Up Docker Compose to Link Flask and MySQL
 ```
