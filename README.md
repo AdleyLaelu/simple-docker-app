@@ -116,3 +116,47 @@ environment: Sets environment variables for MySQL (root password and database na
 volumes: Ensures data persistence by storing the database files in a volume called db_data.
 volumes: Defines a named volume (db_data) to persist the MySQL database files.
 ```
+# 3: Modify the Flask App to Use Docker Networking
+`nano app.py`
+```
+In your app.py, ensure that the host is set to db, which refers to the MySQL service defined in docker-compose.yml:
+connection = mysql.connector.connect(
+    host='db',  # 'db' refers to the MySQL service name in Docker Compose
+    user='root',
+    password='rootpassword',
+    database='test_db'
+)
+```
+# 4: Run the Application with Docker Compose
+```
+Now, with docker-compose.yml set up, you can bring up both the Flask app and the MySQL service by running:
+`docker-compose up`
+This command will start both containers (Flask and MySQL), and they should be able to communicate with each other.
+```
+```
+Step 5: Test the Application
+
+Once both containers are running, open your browser and go to http://localhost:5000. The Flask app should now be able to connect to the MySQL database successfully
+```
+But you will see empty messag []
+```
+```
+# 5: Add Data to the Database via the /add-message Route
+```
+You need to initialize the database and ensure the messages table is created by running:
+curl http://localhost:5000/init-db
+```
+`Open a New Terminal:
+Navigate to Your Project Directory 
+cd ~/simple-docker-app`
+
+```
+In the new terminal, run the following command to initialize the database and create the table:
+
+curl http://localhost:5000/init-db
+```
+```
+After initializing the database, you can add a message using the following curl command:
+curl -X POST http://localhost:5000/add-message -H "Content-Type: application/json" -d '{"content":"Hello from Docker!"}'
+```
+![Capture d’écran 2024-09-04 201538](https://github.com/user-attachments/assets/d4f0c13f-01a4-473b-8376-5d80144ff6f3)
