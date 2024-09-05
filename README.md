@@ -1,7 +1,7 @@
 # simple-docker-app
 Will Create and deploy a two-part web application: a backend written in Python (Flask) and a MySQL database. Will use Docker to containerize these two services and Docker Compose to orchestrate their deployment
 
-# 1) Creating the Dockerfile in the directory where you files are found
+# 1: Creating the Dockerfile in the directory where you files are found
 
 ```
 $ touch Dockerfile
@@ -18,8 +18,6 @@ $ FROM python:3.8-slim
 Set/Create the working directory in the container
 $ WORKDIR /app
 ```
-
-
 ```
 Copy the current directory contents into the container, This copies everything in your local directory (including app.py and requirements.txt) into the /app directory in the container
 COPY . /app`
@@ -134,9 +132,8 @@ Now, with docker-compose.yml set up, you can bring up both the Flask app and the
 This command will start both containers (Flask and MySQL), and they should be able to communicate with each other.
 ```
 ```
-Step 5: Test the Application
-
-Once both containers are running, open your browser and go to http://localhost:5000. The Flask app should now be able to connect to the MySQL database successfully
+Once both containers are running, open your browser and go to http://localhost:5000.
+The Flask app should now be able to connect to the MySQL database successfully
 ```
 But you will see empty messag []
 ```
