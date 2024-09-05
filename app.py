@@ -8,9 +8,9 @@ app = Flask(__name__)
 def create_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',  # Remplacez par votre hôte MySQL
-            user='your_username',  # Remplacez par votre nom d'utilisateur MySQL
-            password='your_password',  # Remplacez par votre mot de passe MySQL
+            host='db',  # Remplacez par votre hôte MySQL
+            user='root',  # Remplacez par votre nom d'utilisateur MySQL
+            password='rootpassword',  # Remplacez par votre mot de passe MySQL
             database='test_db'  # Remplacez par le nom de votre base de données
         )
         if connection.is_connected():
