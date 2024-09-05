@@ -62,7 +62,7 @@ Connection fails because MsQL was not linked to Flask
 ![Capture d’écran 2024-09-04 195518](https://github.com/user-attachments/assets/355f7528-1259-4722-b4bd-e92ec502a7d6)
 
 
-# 2) Set Up Docker Compose to Link Flask and MySQL
+# 2: Set Up Docker Compose to Link Flask and MySQL
 ```
 Service Orchestration: Docker Compose handles the orchestration of multiple containers.
 It makes sure that the MySQL service is up before the Flask app tries to connect, which is handled by the depends_on directive in Docker Compose.
